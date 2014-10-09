@@ -16,7 +16,8 @@ public class ResultListActivity extends Activity {
     private ListView list ;
 
     private SwipeRefreshLayout swipeLayout;
-    private JSONParser jsonParser;
+    //private JSONParser jsonParser;
+    private JSONParser2 jsonParser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,21 +27,20 @@ public class ResultListActivity extends Activity {
         list = (ListView) findViewById(R.id.listView1);
 
         searchText = intent.getStringExtra("searchText");
-        jsonParser= new JSONParser(list);
-        jsonParser.execute(searchText);
+
+        /*jsonParser= new JSONParser(list);
+        jsonParser.execute(searchText);*/
 
         swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
+
+        jsonParser = new JSONParser2(list,swipeLayout);
+
+        jsonParser.jsonParse( searchText);
         swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                jsonParser = new JSONParser(list);
-                jsonParser.execute(searchText);
-                new Handler().postDelayed(new Runnable() {
-                    @Override public void run() {
-
-                        swipeLayout.setRefreshing(false);
-                    }
-                }, 5000);
+                jsonParser.jsonParse( searchText);
+                //jsonParser.execute(searchText);
             }
         });
 

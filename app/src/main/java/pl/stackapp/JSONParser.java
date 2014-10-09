@@ -33,6 +33,7 @@ public class JSONParser extends AsyncTask<String, String, JSONObject> {
     private static String  TAG_ANSWER_COUNT = "answer_count";
     private static String  TAG_LINK = "link";
     private static String  TAG_TITLE = "title";
+
     private static ListView listView;
 
     static InputStream is = null;
@@ -48,6 +49,7 @@ public class JSONParser extends AsyncTask<String, String, JSONObject> {
            String searchText = args[0];
            String stringUrl = URL1 + searchText + URL2;
 
+       // InputStream source = retrieveStream(url);
         JSONObject json = getJSONFromUrl(stringUrl);
         return json;
 
@@ -72,8 +74,8 @@ public class JSONParser extends AsyncTask<String, String, JSONObject> {
                 listRowList.add(listRow);
                 ListRowAdapter adapter ;
 
-                adapter = new ListRowAdapter(listView.getContext(), R.layout.list_row, listRowList);
-                listView.setAdapter(adapter);
+                /*adapter = new ListRowAdapter(listView.getContext(), R.layout.list_row, listRowList);
+                listView.setAdapter(adapter);*/
 
             }
 

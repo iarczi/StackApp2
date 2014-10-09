@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 
@@ -16,9 +18,9 @@ public class ListRowAdapter extends ArrayAdapter<ListRow> {
 
     Context context;
     int layoutResourceId;
-    List<ListRow> data = null;
+    ListRow[] data = null;
 
-    public ListRowAdapter(Context context, int layoutResourceId, List<ListRow> data) {
+    public ListRowAdapter(Context context, int layoutResourceId, ListRow[] data) {
         super(context, layoutResourceId, data);
         this.layoutResourceId = layoutResourceId;
         this.context = context;
@@ -48,10 +50,14 @@ public class ListRowAdapter extends ArrayAdapter<ListRow> {
             rowView = (ListRowView)row.getTag();
         }
 
-        ListRow object = data.get(position);
+        ListRow object = data[position];
+        //rowView.avatarImage.
+        //rowView.setImage(object.owner.avatarURL);
+        if(rowView.avatarImage != null){
+            Picasso.with(context).load(object.owner.avatarURL).into(rowView.avatarImage);
+        }
 
-        rowView.setImage(object.avatarURL);
-        rowView.author.setText(object.author);
+        rowView.author.setText(object.owner.author);
         rowView.answers.setText(object.answers);
         rowView.subject.setText(object.subject);
         return row;
@@ -59,7 +65,7 @@ public class ListRowAdapter extends ArrayAdapter<ListRow> {
 
     public ListRow getItem(int position){
 
-        return data.get(position);
+        return data[position];
     }
 
 }

@@ -18,6 +18,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         searchButton = (Button)findViewById(R.id.searchButton);
         searchText = (EditText)findViewById(R.id.searchText);
 

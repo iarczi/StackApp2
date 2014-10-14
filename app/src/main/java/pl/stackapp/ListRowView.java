@@ -9,10 +9,6 @@ public class ListRowView {
     public TextView author ;
     public TextView answers;
     public ImageView avatarImage;
-    public String avatarURL;
-    /*public void setImage(String avatarURL) {
-        DownloadImageTask downloadImageTask = new DownloadImageTask(avatarImage);
-        downloadImageTask.execute(avatarURL);
-    }*/
+   // public String avatarURL;
 
 }

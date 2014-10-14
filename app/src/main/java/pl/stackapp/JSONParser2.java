@@ -1,24 +1,16 @@
 package pl.stackapp;
 
-import android.content.Context;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
-import com.loopj.android.http.RequestHandle;
-import com.loopj.android.http.RequestParams;
 
 import org.apache.http.Header;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.InputStream;
 
 /**
  * Created by aRczi on 2014-10-07.

@@ -3,7 +3,6 @@ package pl.stackapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,7 +15,6 @@ public class ResultListActivity extends Activity {
     private ListView list ;
 
     private SwipeRefreshLayout swipeLayout;
-    //private JSONParser jsonParser;
     private JSONParser2 jsonParser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +26,6 @@ public class ResultListActivity extends Activity {
 
         searchText = intent.getStringExtra("searchText");
 
-        /*jsonParser= new JSONParser(list);
-        jsonParser.execute(searchText);*/
 
         swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
 
@@ -40,7 +36,6 @@ public class ResultListActivity extends Activity {
             @Override
             public void onRefresh() {
                 jsonParser.jsonParse( searchText);
-                //jsonParser.execute(searchText);
             }
         });
 

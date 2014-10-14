@@ -10,6 +10,7 @@
 
         >
         <activity
+            android:configChanges="orientation|screenSize"
             android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
@@ -20,12 +21,16 @@
         </activity>
         <activity
             android:name=".ResultListActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:configChanges="orientation|screenSize">
         </activity>
         <activity
+            android:configChanges="orientation|screenSize"
             android:name=".RowDetailsActivity"
             android:label="@string/app_name" >
+
         </activity>
     </application>
+
     <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

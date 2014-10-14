@@ -11,8 +11,6 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.List;
-
 
 public class ListRowAdapter extends ArrayAdapter<ListRow> {
 
@@ -51,8 +49,7 @@ public class ListRowAdapter extends ArrayAdapter<ListRow> {
         }
 
         ListRow object = data[position];
-        //rowView.avatarImage.
-        //rowView.setImage(object.owner.avatarURL);
+
         if(rowView.avatarImage != null){
             Picasso.with(context).load(object.owner.avatarURL).into(rowView.avatarImage);
         }

@@ -9,6 +9,4 @@ public class ListRowView {
     public TextView author ;
     public TextView answers;
     public ImageView avatarImage;
-   // public String avatarURL;
-
-}
+ }

@@ -12,9 +12,7 @@ import org.apache.http.Header;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Created by aRczi on 2014-10-07.
- */
+
 public class JSONParser2 {
     private static String  URL1 = "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=";
     private static String  URL2 = "&site=stackoverflow";
@@ -53,9 +51,6 @@ public class JSONParser2 {
 
         });
 
-
-
-       // int length = listRow.length;
 
     }
 

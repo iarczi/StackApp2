@@ -27,8 +27,8 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
 
                 Intent i = new Intent(getApplicationContext(), ResultListActivity.class);
-                String string = searchText.getText().toString() ;
-                i.putExtra("searchText",string);
+                String string = searchText.getText().toString();
+                i.putExtra("searchText", string);
                 startActivity(i);
             }
         });
